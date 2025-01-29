@@ -1,0 +1,296 @@
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Seller Page</title>
+    <-- Bootstrap CSS --
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <-- Custom CSS --
+    <style>
+        body {
+            background-color: #f8f9fa; /* Bootstrap default background color */
+            color: #333; /* Text color */
+        }
+        .jumbotron {
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your actual image path */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            text-align: center;
+            padding: 100px 25px;
+            margin-bottom: 0;
+        }
+        .navbar {
+            background-color: #007bff !important; /* Updated navbar background color */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Bootstrap navbar shadow */
+        }
+        .navbar-brand {
+            font-size: 1.5rem; /* Adjust navbar brand font size */
+            color: white !important; /* Navbar brand color */
+        }
+        .nav-link {
+            color: white !important; /* Navbar links color */
+        }
+        .nav-link:hover {
+            color: #f8f9fa !important; /* Navbar links color on hover */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Primary button background color */
+            border-color: #007bff; /* Primary button border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Primary button background color on hover */
+            border-color: #0056b3; /* Primary button border color on hover */
+        }
+        .card {
+            background-color: #fff; /* Card background color */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Card shadow */
+        }
+        .card-title {
+            color: #007bff; /* Card title color */
+        }
+        .card-subtitle {
+            color: #6c757d; /* Card subtitle color */
+        }
+        .form-control {
+            background-color: #f8f9fa; /* Form control background color */
+        }
+        .form-section {
+            margin-bottom: 40px; /* Adjust margin bottom for form section */
+        }
+        .table-section {
+            margin-top: 20px; /* Adjust margin top for table section */
+        }
+    </style>
+</head>
+<body>
+    <-- Navbar --
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Product Seller Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 shadow-lg p-5">
+        <-- Product Seller Profile --
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Product Seller Profile</h5>
+                <p class="card-text"><strong>Username:</strong> <%= user.name %></p>
+                <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+                <p class="card-text"><strong>Contact Number:</strong> <%= user.phone %></p>
+            </div>
+        </div>
+        
+        <-- Orders Table Section --
+        <div class="table-section mt-4">
+            <h1>Orders</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">S.NO</th>
+                        <th scope="col">Technician Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Part Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Actions</th> <-- New column for actions --
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (orders.length > 0) { %>
+                        <% orders.forEach(function(order, index) { %>
+                            <tr>
+                                <td><%= index + 1 %></td>
+                                <td><%= order.name %></td>
+                                <td><%= order.contactNumber %></td>
+                                <td><%= order.partsname %></td>
+                                <td><%= order.quantity %></td>
+                                <td>
+                                    
+                                    <form action="/delete/<%= order.id %>" method="POST"> <-- Form for deleting order --
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6" class="text-center">No orders found</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+        <-- Display Success/Error Message --
+        <% if (message) { %>
+            <div class="alert alert-info mt-3"><%= message %></div>
+        <% } %>
+    </div>
+    
+    <-- Bootstrap JS --
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Seller Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Bootstrap default background color */
+            color: #333; /* Text color */
+        }
+        .navbar {
+            background-color: #007bff !important; /* Updated navbar background color */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Navbar shadow */
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+        .card {
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .table-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Product Seller Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 shadow-lg p-5">
+        <!-- Product Seller Profile -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Product Seller Profile</h5>
+                <p class="card-text"><strong>Username:</strong> <%= user.name %></p>
+                <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+                <p class="card-text"><strong>Contact Number:</strong> <%= user.phone %></p>
+            </div>
+        </div>
+        
+        <!-- Orders Table Section -->
+        <div class="table-section mt-4">
+            <h1>Orders</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">S.NO</th>
+                        <th scope="col">Technician Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Part Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (orders.length > 0) { %>
+                        <% orders.forEach(function(order, index) { %>
+                            <tr>
+                                <td><%= index + 1 %></td>
+                                <td><%= order.technicianName %></td> <!-- Make sure field name matches the database -->
+                                <td><%= order.contactNumber %></td>
+                                <td><%= order.partsname %></td>
+                                <td><%= order.quantity %></td>
+                                <td>
+                                    <form action="/delete-order/<%= order._id %>" method="POST" onsubmit="return confirmDelete();">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6" class="text-center">No orders found</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Display Success/Error Message -->
+        <% if (message) { %>
+            <div class="alert alert-info mt-3"><%= message %></div>
+        <% } %>
+    </div>
+    
+    <!-- JavaScript for delete confirmation -->
+    <script>
+        function confirmDelete() {
+            return confirm('Are you sure you want to delete this order?');
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
