@@ -1,0 +1,632 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tSignUp</title>
+    <link rel="stylesheet" href="/signup.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2> Technician SignUp page</h2>
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label for="name">Email:</label>
+            <input type="text" id="name" name="username" placeholder="Enter your email" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+
+
+
+    
+    
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician SignUp</title>
+    <link rel="stylesheet" href="/signup.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Technician SignUp Page</h2>
+        <form action="/tsignup" method="post">
+          <div class="form-group">
+            <label for="name">Email:</label>
+            <input type="text" id="name" name="username" placeholder="Enter your email" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>-->
+
+<!--
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician SignUp</title>
+    <link rel="stylesheet" href="/signup.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .form-container {
+            position: relative;
+            background-color: black transparent ;
+            margin: auto;
+            padding: 40px;
+            border:  black;
+            width: 80%;
+            max-width: 300px;
+            /*border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+            z-index: 1;
+            
+            
+
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+          
+            
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border-color: black;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: blue transparent;
+            color: white transparent;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: darkblue ;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: red;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .back-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .back-video {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .back-video {
+        width: auto;
+        height: 100%;
+      }
+    }
+    h2{
+      color: gold ;
+    }
+   .email{
+    color: yellow ;
+   }
+
+   .password{
+    color: yellow;
+   }
+        
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="repair1.mp4" type="video/mp4">
+    </video>
+    <div class="form-container">
+        <span class="close" onclick="window.location.href='/'">&times;</span>
+        <h2>Technician SignUp</h2>
+        <% if (message) { %>
+          <p style="color: red;"><%= message %></p>
+      <% } %>
+        <form action="/tsignup" method="post">
+            <div class="form-group">
+                <label for="name" class="email">Email:</label>
+                <input type="text" id="name" name="username" placeholder="Enter your email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password" class="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician Sign Up</title>
+    <link rel="stylesheet" href="/signup.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .form-container {
+            position: relative;
+            background-color: none ;
+            margin: auto;
+            padding: 80px;
+            border:  none;
+            width: 80%;
+            max-width: 300px;
+            /*border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+            z-index: 1;
+            
+            
+
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            border: none;
+            
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+          
+            border: none;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            border: none;
+            
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: content-box;
+            border-color: none ;
+        }
+
+        .submit-btn {
+            width: 50%;
+            padding: 10px;
+            background-color: wheat;
+            color: red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+
+            
+        }
+
+        .submit-btn:hover {
+            background-color: wheat ;
+        }
+
+        .close {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: red;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .back-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .back-video {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .back-video {
+        width: auto;
+        height: 100%;
+      }
+    }
+    h1{
+      color: gold ;
+      text-align: center;
+    }
+   .email{
+    color: yellow ;
+   }
+
+   .password{
+    color: yellow;
+   }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="repair1.mp4" type="video/mp4">
+    </video>
+    <div class="form-container">
+        <span class="close" onclick="window.location.href='/'">&times;</span>
+        <h1>Technician Sign Up</h1>
+        <% if (message) { %>
+            <p style="color: red;"><%= message %></p>
+        <% } %>
+        <form action="/tsignup" method="post">
+            <div class="form-group">
+                <label for="name"><b style="color: yellow;">Email:</b>:</label>
+                <input type="text" id="name" name="username" placeholder="Enter your email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password"><b style="color: yellow;">Password:</b></label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+-->
+
+
+
+<!--THE RUNNING CODE--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician Sign Up</title>
+    <link rel="stylesheet" href="/signup.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .form-container {
+            position: relative;
+            margin: auto;
+            padding: 80px;
+            width: 80%;
+            max-width: 300px;
+            z-index: 1;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            width: 50%;
+            padding: 10px;
+            background-color: wheat;
+            color: red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto; /* Center horizontally */
+            display: block;
+        }
+
+        .submit-btn:hover {
+            background-color: wheat;
+        }
+
+        .close {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: red;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .back-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .back-video {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .back-video {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        h1 {
+            color: gold;
+            text-align: center;
+        }
+
+        .email {
+            color: yellow;
+        }
+
+        .password {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="repair1.mp4" type="video/mp4">
+    </video>
+    <div class="form-container">
+        <span class="close" onclick="window.location.href='/'">&times;</span>
+        <h1>Technician Sign Up</h1>
+        <% if (message) { %>
+            <p style="color: red;"><%= message %></p>
+        <% } %>
+        <form action="/tsignup" method="post">
+            <div class="form-group">
+                <label for="name"><b style="color: yellow;">Email:</b></label>
+                <input type="text" id="name" name="username" placeholder="Enter your email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password"><b style="color: yellow;">Password:</b></label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>-->
+
+
+
+
+<!-- tsignup.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician Sign Up</title>
+    <link rel="stylesheet" href="/signup.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .form-container {
+            position: relative;
+            margin: auto;
+            padding: 80px;
+            width: 80%;
+            max-width: 300px;
+            z-index: 1;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: gold;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: yellow;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            width: 50%;
+            padding: 10px;
+            background-color: wheat;
+            color: red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto; /* Center horizontally */
+            display: block;
+        }
+
+        .submit-btn:hover {
+            background-color: wheat;
+        }
+
+        .close {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: red;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .back-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .back-video {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .back-video {
+                width: auto;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="repair1.mp4" type="video/mp4">
+    </video>
+    <div class="form-container">
+        <span class="close" onclick="window.location.href='/'">&times;</span>
+        <h1>Technician Sign Up</h1>
+        <% if (message) { %>
+            <p style="color: red;"><%= message %></p>
+        <% } %>
+        <form action="/tsignup" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="username" id="username" name="name" placeholder="Enter your email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

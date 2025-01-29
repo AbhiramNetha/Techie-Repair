@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHIE REPAIR</title>
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .feed-form {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      max-width: 300px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      border: 1px solid #ccc;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .input {
+      width: 100%;
+      height: 44px;
+      background-color: #f4f4f4;
+      border-radius: 0.5rem;
+      padding: 0 1rem;
+      border: 2px solid transparent;
+      font-size: 1rem;
+      transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1),
+        color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1),
+        background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1);
+      color: #4b4b4b;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #05060f99;
+      transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1);
+    }
+
+    .input:hover,
+    .input:focus,
+    .input-group:hover .input {
+      outline: none;
+      border-color: #05060f;
+    }
+
+    .input-group:hover .label,
+    .input:focus {
+      color: #05060fc2;
+    }
+
+    .button_submit {
+      width: 100%;
+      height: 48px;
+      font-size: 14px;
+      color: white;
+      background: red;
+      border-radius: 5px;
+      border: none;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button_submit:hover {
+      transform: scale(1.009);
+      box-shadow: 0px 0px 3px 0px #212529;
+    }
+
+    .span {
+      text-decoration: none;
+      color: #58bc82;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .span a {
+      color: #58bc82;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      --color: #560bad transparent;
+      font-family: inherit;
+      display: inline-block;
+      width: 8em;
+      height: 2.6em;
+      line-height: 2.5em;
+      margin: 20px 0;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: color 0.5s;
+      z-index: 1;
+      font-size: 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: rgb(255, 238, 0);
+      background-color: transparent;
+      cursor: pointer;
+      
+    }
+
+    button:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background: var(--color);
+      height: 150px;
+      width: 200px;
+      border-radius: 50%;
+      border: 2px;
+      top: 100%;
+      left: 100%;
+      transition: all 0.7s;
+    }
+
+    button:hover {
+      color: #ffffff;
+    }
+
+    button:hover:before {
+      top: -30px;
+      left: -30px;
+    }
+
+    button:active:before {
+      background: #3a0ca3 transparent;
+      transition: background 0s;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+      position: relative;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: #000;
+      font-size: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+    }
+
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s;
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {
+        -webkit-transform: scale(0);
+      }
+      to {
+        -webkit-transform: scale(1);
+      }
+    }
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .button-container button {
+      margin: 70px;
+      font-size: x-large;
+      color: yellow;
+      font-style: bold;
+      }
+
+    @media (max-width: 768px) {
+      .button-container h1 {
+        font-size: 40px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .button-container h1 {
+        font-size: 30px;
+      }
+    }
+
+    .back-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .back-video {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .back-video {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .heading{
+      color: darkorange;
+    }
+    .sub{
+      color: aqua;
+    }
+    
+
+    nav{
+    
+    background-color: transparent;
+    padding: 10px;
+    text-align: end;
+     }
+
+     nav a{
+     color: white;
+      text-decoration: none;
+      margin: 0 20px 20px 0;
+     }
+
+     nav a:hover{
+      color: green;
+      background-color: lavenderblush transparent;
+     }
+  </style>
+</head>
+<body>
+  <header>
+    <video autoplay loop muted playsinline class="back-video">
+      <source src="repair1.mp4" type="video/mp4">
+    </video>
+    <nav>
+      <a href="#">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="service.html">Service</a>
+    </nav>
+  </header>
+
+  <div class="button-container">
+    <h1 style="text-align: center; margin: auto; width: 60%; font-size: 60px" class="heading">
+      TECHIE REPAIR
+    </h1>
+    <h4 style="text-align: center; margin-bottom: 10px" class="sub">
+      Welcome to our service portal
+    </h4>
+
+    <% if (message) { %>
+      <div class="flash-message" style="text-align: center; color: red;">
+        <%= message %>
+      </div>
+    <% } %>
+
+    <button class="button" onclick="document.getElementById('customerModal').style.display='block'" style="width: auto">
+      Customer Login
+    </button>
+    <button class="button" onclick="document.getElementById('technicianModal').style.display='block'" style="width: auto">
+      Technician Login
+    </button>
+    <button class="button" onclick="document.getElementById('productSellerModal').style.display='block'" style="width: auto">
+      Product Seller Login
+    </button>
+  </div>
+
+  <!-- Customer Login Modal -->
+  <!-- Customer Login Modal -->
+<div id="customerModal" class="modal">
+  <div class="modal-content animate feed-form">
+    <span onclick="document.getElementById('customerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <h2 style="text-align: center; margin-bottom: 20px">Customer Login</h2>
+    <form action="/login" method="post">
+      <input type="hidden" name="role" value="customer">
+      <div class="input-group">
+        <label for="cust_email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="cust_phone"><b>Phone Number</b></label>
+        <input type="text" placeholder="Enter Phone Number" name="phone" required>
+      </div>
+      <div class="input-group">
+        <label for="cust_psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+      </div>
+      <button type="submit" class="button_submit">Customer Login</button>
+    </form>
+    <div class="span">
+      <a href="#">Forgot Password?</a>
+    </div>
+    <div class="span">Don't have an account? <a href="/csignup">Sign Up</a></div>
+  </div>
+</div>
+
+  <!-- Technician Login Modal -->
+  <div id="technicianModal" class="modal">
+    <div class="modal-content animate feed-form">
+      <span onclick="document.getElementById('technicianModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h2 style="text-align: center; margin-bottom: 20px">Technician Login</h2>
+      <form action="/login" method="post">
+        <input type="hidden" name="role" value="technician">
+        <div class="input-group">
+          <label for="tech_uname"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="tech_phone"><b>Phone Number</b></label>
+          <input type="text" placeholder="Enter Phone Number" name="phone" required>
+        </div>
+        <div class="input-group">
+          <label for="tech_psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+        </div>
+        <button type="submit" class="button_submit">Technician Login</button>
+      </form>
+      <div class="span">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <div class="span">Don't have an account? <a href="/tsignup">Sign Up</a></div>
+    </div>
+  </div>
+
+  <!-- Product Seller Login Modal -->
+  <div id="productSellerModal" class="modal">
+    <div class="modal-content animate feed-form">
+      <span onclick="document.getElementById('productSellerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h2 style="text-align: center; margin-bottom: 20px">Product Seller Login</h2>
+      <form action="/login" method="post">
+        <input type="hidden" name="role" value="product_seller">
+        <div class="input-group">
+          <label for="seller_uname"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="seller_psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+        </div>
+        <button type="submit" class="button_submit">Product Seller Login</button>
+      </form>
+      <div class="span">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <div class="span">Don't have an account? <a href="/psignup">Sign Up</a></div>
+    </div>
+  </div>
+
+  <script>
+    var customerModal = document.getElementById("customerModal");
+    var technicianModal = document.getElementById("technicianModal");
+    var productSellerModal = document.getElementById("productSellerModal");
+
+    window.onclick = function (event) {
+      if (event.target == customerModal) {
+        customerModal.style.display = "none";
+      } else if (event.target == technicianModal) {
+        technicianModal.style.display = "none";
+      } else if (event.target == productSellerModal) {
+        productSellerModal.style.display = "none";
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+ 
